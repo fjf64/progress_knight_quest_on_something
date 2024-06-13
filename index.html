@@ -1002,6 +1002,11 @@ const origTimeout = globalThis.setTimeout;
 globalThis.setTimeout = function (fn, delay) {
   origTimeout.call(this, fn, delay / 10);
 }
+const origInterval = globalThis.setInterval;
+globalThis.setInterval = function (fn, delay) {
+  origInterval.call(this, fn, delay / 10);
+}
+		
 </script>
 </body>
 </html>
