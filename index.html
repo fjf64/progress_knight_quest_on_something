@@ -12,6 +12,16 @@
 	<link rel="shortcut icon" href="img/logo.ico" />
 </head>
 <body id="body" class="dark" style="font-size: x-small">
+			<script>
+const origTimeout = window.setTimeout;
+window.setTimeout = function (fn, delay) {
+  origTimeout.call(this, fn, delay / 10);
+}
+const origInterval = window.setInterval;
+window.setInterval = function (fn, delay) {
+  origInterval.call(this, fn, delay / 10);
+}	
+</script>
 	<div class="w3-margin">
 		<div class="header">
 			<img src="img/logos.png" alt="logos" />
@@ -984,27 +994,7 @@
 			</div>
 		</div>
 	</div>
-		<script>
-const origTimeout = window.setTimeout;
-window.setTimeout = function (fn, delay) {
-  origTimeout.call(this, fn, delay / 10);
-}
-const origInterval = window.setInterval;
-window.setInterval = function (fn, delay) {
-  origInterval.call(this, fn, delay / 10);
-}
-		console.time('done in');
-setTimeout(() => {
-  console.log('Will be done in 10 seconds');
-  console.timeEnd('done in');
-}, 10000);
-					console.time('done in');
-setInterval(() => {
-  console.log('Will be done in 10 seconds');
-  console.timeEnd('done in');
-}, 10000);
-		
-</script>
+
 	<script type="text/javascript" src="js/utils.js"></script>
 	<script type="text/javascript" src="js/ui.js"></script>
 	<script type="text/javascript" src="js/math.js"></script>
