@@ -1,16 +1,3 @@
-
-const origTimeout = globalThis.setTimeout;
-globalThis.setTimeout = function (fn, delay) {
-  origTimeout.call(this, fn, delay / 10);
-}
-
-
-console.time('done in');
-setTimeout(() => {
-  console.log('Will be done in 10 seconds');
-  console.timeEnd('done in');
-}, 10000);
-
 (function (workerScript) {
 	if (!/MSIE 10/i.test (navigator.userAgent)) {
 		try {
