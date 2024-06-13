@@ -985,16 +985,21 @@
 		</div>
 	</div>
 		<script>
-const origTimeout = globalThis.setTimeout;
-globalThis.setTimeout = function (fn, delay) {
+const origTimeout = window.setTimeout;
+window.setTimeout = function (fn, delay) {
   origTimeout.call(this, fn, delay / 10);
 }
-const origInterval = globalThis.setInterval;
-globalThis.setInterval = function (fn, delay) {
+const origInterval = window.setInterval;
+window.setInterval = function (fn, delay) {
   origInterval.call(this, fn, delay / 10);
 }
 		console.time('done in');
 setTimeout(() => {
+  console.log('Will be done in 10 seconds');
+  console.timeEnd('done in');
+}, 10000);
+					console.time('done in');
+setInterval(() => {
   console.log('Will be done in 10 seconds');
   console.timeEnd('done in');
 }, 10000);
