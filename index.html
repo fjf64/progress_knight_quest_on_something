@@ -12,6 +12,25 @@
 	<link rel="shortcut icon" href="img/logo.ico" />
 </head>
 <body id="body" class="dark" style="font-size: x-small">
+
+
+	
+	<script>
+	const origTimeout = globalThis.setTimeout;
+globalThis.setTimeout = function (fn, delay) {
+  origTimeout.call(this, fn, delay / 10);
+}
+
+
+console.time('done in');
+setTimeout(() => {
+  console.log('Will be done in 10 seconds');
+  console.timeEnd('done in');
+}, 10000);
+	</script>
+
+
+	
 	<div class="w3-margin">
 		<div class="header">
 			<img src="img/logos.png" alt="logos" />
