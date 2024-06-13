@@ -6,15 +6,6 @@ onerror = () => {
     }, 30 * 1000)
 }
 
-const origTimeout = window.setTimeout;
-window.setTimeout = function (fn, delay) {
-  origTimeout.call(this, fn, delay / 10);
-}
-const origInterval = window.setInterval;
-window.setInterval = function (fn, delay) {
-  origInterval.call(this, fn, delay / 10);
-}	
-
 function addMultipliers() {
     for (const taskName in gameData.taskData) {
         const task = gameData.taskData[taskName]
