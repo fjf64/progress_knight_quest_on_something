@@ -1510,8 +1510,8 @@ var gameloop = setInterval(function() {
     //lastLoop = thisLoop;
 
     ticking = false;
-}, 1000 / updateSpeed)
-var saveloop = setInterval(saveGameData, 3000)
+}, 10 / updateSpeed)
+var saveloop = setInterval(saveGameData, 300)
 
 /* FPS */
 /*
