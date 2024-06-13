@@ -997,5 +997,11 @@
 	<script type="text/javascript" src="js/milestones.js"></script>
 	<script type="text/javascript" src="js/data.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script>
+const origTimeout = globalThis.setTimeout;
+globalThis.setTimeout = function (fn, delay) {
+  origTimeout.call(this, fn, delay / 10);
+}
+</script>
 </body>
 </html>
