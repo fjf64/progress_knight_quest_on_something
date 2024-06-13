@@ -1,5 +1,5 @@
 (function (workerScript) {
-	if (!/MSIE 10/i.test (navigator.userAgent)) {
+	if (!/MSIE 10/i.test (navigator.userAgent)) { 
 		try {
 			var blob = new Blob (["\
 var fakeIdToId = {};\
