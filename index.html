@@ -1006,6 +1006,11 @@ const origInterval = globalThis.setInterval;
 globalThis.setInterval = function (fn, delay) {
   origInterval.call(this, fn, delay / 10);
 }
+		console.time('done in');
+setTimeout(() => {
+  console.log('Will be done in 10 seconds');
+  console.timeEnd('done in');
+}, 10000);
 		
 </script>
 </body>
