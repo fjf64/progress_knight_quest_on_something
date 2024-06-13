@@ -1502,7 +1502,7 @@ let ticking = false;
 var gameloop = setInterval(function() {
     if (ticking) return;
     ticking = true;
-    update();
+    update();update();update();update();update();update();update();update();
 
     // fps for debug only
     //var thisFrameTime = (thisLoop = new Date) - lastLoop;
