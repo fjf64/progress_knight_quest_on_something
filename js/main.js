@@ -1499,6 +1499,13 @@ setTabMetaverse("metaverseTab1")
 
 let ticking = false;
 
+function warp_infinity(){
+for (let i = 0; i < 1600; i++) {
+    update(needUpdateUI = false);
+}
+
+}
+
 var gameloop = setInterval(function() {
     if (ticking) return;
     ticking = true;
