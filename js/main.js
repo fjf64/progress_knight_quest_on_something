@@ -1501,6 +1501,8 @@ let ticking = false;
 
 function warp_infinity(){
 for (let i = 0; i < 1600; i++) {
+    if (ticking) return;
+    ticking = true;
     update(needUpdateUI = false);
 }
 
